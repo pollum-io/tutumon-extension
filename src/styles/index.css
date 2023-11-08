@@ -1,0 +1,160 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+    .dark {
+        --background: 224 71.4% 4.1%;
+        --foreground: 210 20% 98%;
+        --card: 224 71.4% 4.1%;
+        --card-foreground: 210 20% 98%;
+        --popover: 224 71.4% 4.1%;
+        --popover-foreground: 210 20% 98%;
+        --primary: 263.4 70% 50.4%;
+        --primary-foreground: 210 20% 98%;
+        --secondary: 215 27.9% 16.9%;
+        --secondary-foreground: 210 20% 98%;
+        --muted: 215 27.9% 16.9%;
+        --muted-foreground: 217.9 10.6% 64.9%;
+        --accent: 215 27.9% 16.9%;
+        --accent-foreground: 210 20% 98%;
+        --destructive: 0 62.8% 30.6%;
+        --destructive-foreground: 210 20% 98%;
+        --border: 215 27.9% 16.9%;
+        --input: 215 27.9% 16.9%;
+        --ring: 263.4 70% 50.4%;
+    }
+}
+
+p,
+h1,
+h2,
+h3 {
+    font-family: 'Roboto', sans-serif;
+}
+
+.dot-flashing {
+    position: relative;
+    width: 10px;
+    height: 10px;
+    border-radius: 5px;
+    background-color: #9880ff;
+    color: #9880ff;
+    animation: dot-flashing 1s infinite linear alternate;
+    animation-delay: 0.5s;
+}
+
+.dot-flashing::before,
+.dot-flashing::after {
+    content: '';
+    display: inline-block;
+    position: absolute;
+    top: 0;
+}
+.dot-flashing::before {
+    left: -15px;
+    width: 10px;
+    height: 10px;
+    border-radius: 5px;
+    background-color: #9880ff;
+    color: #9880ff;
+    animation: dot-flashing 1s infinite alternate;
+    animation-delay: 0s;
+}
+.dot-flashing::after {
+    left: 15px;
+    width: 10px;
+    height: 10px;
+    border-radius: 5px;
+    background-color: #9880ff;
+    color: #9880ff;
+    animation: dot-flashing 1s infinite alternate;
+    animation-delay: 1s;
+}
+
+@keyframes dot-flashing {
+    0% {
+        background-color: #9880ff;
+    }
+    50%,
+    100% {
+        background-color: rgba(152, 128, 255, 0.5);
+    }
+}
+
+.dot-flashing-highlight {
+    position: relative;
+    width: 10px;
+    height: 10px;
+    border-radius: 5px;
+    background-color: #45444a;
+    color: #45444a;
+    animation: dot-flashing-highlight 1s infinite linear alternate;
+    animation-delay: 0.5s;
+}
+
+.dot-flashing-highlight::before,
+.dot-flashing-highlight::after {
+    content: '';
+    display: inline-block;
+    position: absolute;
+    top: 0;
+}
+.dot-flashing-highlight::before {
+    left: -15px;
+    width: 10px;
+    height: 10px;
+    border-radius: 5px;
+    background-color: #45444a;
+    color: #45444a;
+    animation: dot-flashing-highlight 1s infinite alternate;
+    animation-delay: 0s;
+}
+.dot-flashing-highlight::after {
+    left: 15px;
+    width: 10px;
+    height: 10px;
+    border-radius: 5px;
+    background-color: #45444a;
+    color: #45444a;
+    animation: dot-flashing-highlight 1s infinite alternate;
+    animation-delay: 1s;
+}
+
+@keyframes dot-flashing-highlight {
+    0% {
+        background-color: #444a48;
+    }
+    50%,
+    100% {
+        background-color: rgba(68, 74, 72, 0.5);
+    }
+}
+
+.response {
+    position: relative;
+}
+
+.response:after {
+    content: '';
+    bottom: 0;
+    position: absolute;
+    border: 0.75em solid transparent;
+    border-bottom-color: #f1f5f9;
+    display: block;
+    left: -0.75em;
+}
+
+.prompt {
+    position: relative;
+}
+
+.prompt:after {
+    content: '';
+    bottom: 0;
+    position: absolute;
+    border: 0.75em solid transparent;
+    border-bottom-color: #63458d;
+    display: block;
+    right: -0.65em;
+}
