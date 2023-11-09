@@ -8,7 +8,9 @@ export function useAiChat() {
     const getResponse = async (input: string) => {
         const data = { input: input }
         setIsLoading(true)
-        const res = await axios.post(`https://tutu-monster.vercel.app/chat`, data, { timeout: 300000 })
+        const res = await axios.post(`http://localhost:3000/api/chat`, data, {
+            timeout: 300000
+        })
         const aiResponse = await res.data
         setIsLoading(false)
         return aiResponse
@@ -21,7 +23,7 @@ export function useOpenAi() {
     const getResponse = async (input: string) => {
         try {
             const res = await axios.post(
-                `https://tutu-monster.vercel.app/api/chat`,
+                `http://localhost:3000/api/chat`,
                 { input: input },
                 { timeout: 40000 }
             )

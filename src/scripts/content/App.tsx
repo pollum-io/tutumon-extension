@@ -3,7 +3,7 @@ import { useSession } from '@/hooks/useSession'
 import React, { useCallback, useEffect, useState } from 'react'
 import axios from 'axios'
 import { useUser } from '@/hooks/useUser'
-import { useOpenAi } from '@/hooks/useAiChat'
+import { useAiChat, useOpenAi } from '@/hooks/useAiChat'
 import { Popover, PopoverContent, PopoverTrigger } from '@/components/ui/popover'
 import HighlightableText from '@/components/HighlightableText'
 
@@ -14,7 +14,7 @@ export type MessageProps = {
 }
 
 const App = () => {
-    const AiChat = useOpenAi()
+    const AiChat = useAiChat()
     const { session } = useSession()
     const { user } = useUser()
     const [isOpen, setIsOpen] = useState(false)
@@ -61,8 +61,7 @@ const App = () => {
             }
             setHighlightedText(request.text)
 
-            const aiResponse =
-                await AiChat.getResponse(request.text)
+            const aiResponse = await AiChat.getResponse(request.text)
 
             setIsHighlightedLoading(false)
             setTooltipContent(aiResponse?.choices[0]?.message?.content)

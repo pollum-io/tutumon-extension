@@ -28,7 +28,7 @@ export default function Chat({
     isLoading: boolean
     setIsLoading: React.Dispatch<React.SetStateAction<boolean>>
 }) {
-    const AiChat = useOpenAi()
+    const AiChat = useAiChat()
     const { session } = useSession()
 
     console.log('extension: ', session)
@@ -184,8 +184,7 @@ export default function Chat({
                                 ])
                             }, 100)
 
-                            const aiResponse =
-                                await AiChat.getResponse(input)
+                            const aiResponse = await AiChat.getResponse(input)
 
                             setTimeout(() => {
                                 setMessages((prev: MessageProps[]) =>

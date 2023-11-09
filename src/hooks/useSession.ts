@@ -39,7 +39,7 @@ export const useSession = () => {
 
     const fetchSession = async () => {
         try {
-            const res = await axios.get('https://tutu-monster.vercel.app/api/login/session')
+            const res = await axios.get('http://localhost:3000/api/login/session')
             const fetchedSession = await res.data
 
             console.log('fetched session', fetchedSession)
