@@ -2,6 +2,7 @@ import { useUser } from '@/hooks/useUser'
 import React, { useState } from 'react'
 import { Avatar } from './ui/avatar'
 import { IconClose } from './ui/icons'
+import { useSession } from '@/hooks/useSession'
 
 const HighlightableText = ({
     highlightedText,
@@ -19,6 +20,8 @@ const HighlightableText = ({
     setTooltipContent: React.Dispatch<React.SetStateAction<string>>
 }) => {
     const { user } = useUser()
+    const { session } = useSession()
+
     return (
         <div className="">
             {loading ? (
@@ -39,14 +42,15 @@ const HighlightableText = ({
                         <div className="inline-flex items-start justify-center rounded-full w-16 h-16 overflow-hidden">
                             <img
                                 src={
-                                    user?.image ||
+                                    session?.picture ||
                                     'https://media.discordapp.net/attachments/740663951389360239/1171932869250257026/tutumon-removebg.png?ex=655e7a89&is=654c0589&hm=09800e7bdfc906d5c591144175b72204cbd967ec60f23b5583d2b3bbd5df6de3&=&width=1000&height=1000'
                                 }
                                 alt="Logo"
-                                className={`w-16 h-16 object-contain ${user?.imgConfig?.mirror
-                                    ? 'transform -scale-x-100'
-                                    : 'transform scale-x-100'
-                                    }`}
+                                className={`w-16 h-16 object-contain ${
+                                    user?.imgConfig?.mirror
+                                        ? 'transform -scale-x-100'
+                                        : 'transform scale-x-100'
+                                }`}
                             />
                         </div>
                         <div className="relative h-4 ml-4 w-6">
@@ -83,10 +87,11 @@ const HighlightableText = ({
                                             'https://media.discordapp.net/attachments/740663951389360239/1171932869250257026/tutumon-removebg.png?ex=655e7a89&is=654c0589&hm=09800e7bdfc906d5c591144175b72204cbd967ec60f23b5583d2b3bbd5df6de3&=&width=1000&height=1000'
                                         }
                                         alt="Logo"
-                                        className={`w-16 h-16 object-contain ${user?.imgConfig?.mirror
-                                            ? 'transform -scale-x-100'
-                                            : 'transform scale-x-100'
-                                            }`}
+                                        className={`w-16 h-16 object-contain ${
+                                            user?.imgConfig?.mirror
+                                                ? 'transform -scale-x-100'
+                                                : 'transform scale-x-100'
+                                        }`}
                                     />
                                 </div>
                             </div>

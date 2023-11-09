@@ -30,9 +30,14 @@ export default function Chat({
 }) {
     const AiChat = useOpenAi()
     const { session } = useSession()
+
+    console.log('extension: ', session)
+
     const { user } = useUser()
     const [input, setInput] = useState('')
     const lastMessageRef = useRef(null)
+
+    console.log(user)
 
     const chatContainerRef = useRef<HTMLDivElement | null>(null)
     const [isAtBottom, setIsAtBottom] = React.useState(false)
@@ -80,16 +85,17 @@ export default function Chat({
                         <Avatar className="border border-white">
                             <img
                                 src={
-                                    user?.image ||
+                                    session?.picture ||
                                     'https://media.discordapp.net/attachments/740663951389360239/1171932869250257026/tutumon-removebg.png?ex=655e7a89&is=654c0589&hm=09800e7bdfc906d5c591144175b72204cbd967ec60f23b5583d2b3bbd5df6de3&=&width=1000&height=1000'
                                 }
                                 alt="Logo"
                                 height={64}
                                 width={64}
-                                className={` ${user?.imgConfig?.mirror
-                                    ? 'transform -scale-x-100'
-                                    : 'transform scale-x-100'
-                                    }`}
+                                className={` ${
+                                    user?.imgConfig?.mirror
+                                        ? 'transform -scale-x-100'
+                                        : 'transform scale-x-100'
+                                }`}
                             />
                         </Avatar>
                         Tutu Monster Chat
@@ -146,8 +152,9 @@ export default function Chat({
                     <Button
                         variant="default"
                         size="icon"
-                        className={`absolute right-4 bottom-1 z-10  transition-opacity duration-300 sm:right-8 md:bottom-2 border border-slate-300 rounded-xl bg-slate-100 disabled:opacity-0 ${isAtBottom ? 'opacity-0' : 'opacity-100'
-                            }`}
+                        className={`absolute right-4 bottom-1 z-10  transition-opacity duration-300 sm:right-8 md:bottom-2 border border-slate-300 rounded-xl bg-slate-100 disabled:opacity-0 ${
+                            isAtBottom ? 'opacity-0' : 'opacity-100'
+                        }`}
                         onClick={scrollToBottom}
                         disabled={isAtBottom}
                     >

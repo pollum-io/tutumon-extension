@@ -18,6 +18,9 @@ export type User = {
 }
 
 export type Session = {
+    picture: string
+    email: string | null
+    name: string
     expires: string
     user: {
         createdDate: string
@@ -36,12 +39,17 @@ export const useSession = () => {
 
     const fetchSession = async () => {
         try {
-            const res = await axios.get('https://tutu-monster.vercel.app/api/auth/session')
+            const res = await axios.get('https://tutu-monster.vercel.app/api/login/session')
             const fetchedSession = await res.data
+
+            console.log('fetched session', fetchedSession)
+
             if (!fetchedSession) return
+
             chrome.storage.sync.set({ session: fetchedSession }, () => {
                 setSession(fetchedSession)
             })
+
             return fetchedSession
         } catch (e) {
             return null
@@ -50,7 +58,8 @@ export const useSession = () => {
     }
 
     useEffect(() => {
-        const allowedDomain = 'tutu-monster.vercel.app/' // Substitua pelo domínio desejado
+        // const allowedDomain = 'tutu-monster.vercel.app/' // Substitua pelo domínio desejado
+        // const allowedDomain = 'localhost'
 
         // Get session from Chrome storage first
         chrome.storage.sync.get(['session'], async result => {
@@ -62,21 +71,21 @@ export const useSession = () => {
             }
         })
 
-        if (window.location.hostname === allowedDomain) {
+        // if (window.location.hostname === allowedDomain) {
+        fetchSession()
+
+        const intervalId = setInterval(() => {
             fetchSession()
+        }, 1000 * 60)
 
-            const intervalId = setInterval(() => {
-                fetchSession()
-            }, 1000 * 60)
+        chrome.storage.onChanged.addListener((changes, areaName) => {
+            if (areaName === 'sync' && changes.session) {
+                setSession(changes.session.newValue)
+            }
+        })
 
-            chrome.storage.onChanged.addListener((changes, areaName) => {
-                if (areaName === 'sync' && changes.session) {
-                    setSession(changes.session.newValue)
-                }
-            })
-
-            return () => clearInterval(intervalId)
-        }
+        return () => clearInterval(intervalId)
+        // }
     }, [])
 
     return { session }

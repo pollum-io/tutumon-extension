@@ -1,11 +1,13 @@
 import axios from 'axios'
 import { useState, useEffect } from 'react'
+import { useSession } from './useSession'
 
 export const useUser = () => {
     const [user, setUser] = useState(null)
+    const { session } = useSession()
 
     const fetchUser = async publickey => {
-        const res = await axios.get(`https://tutu-monster.vercel.app//api/user?publickey=${publickey}`)
+        const res = await axios.get(`https://tutu-monster.vercel.app//api/user?publickey=${session.user.email}`)
         const userData = await res.data
 
         // Set user in Chrome Storage
@@ -19,7 +21,9 @@ export const useUser = () => {
 
     useEffect(() => {
         // Check if we are in the allowed domain
-        const allowedDomain = 'tutu-monster.vercel.app/'
+        // const allowedDomain = 'tutu-monster.vercel.app/'
+
+        const allowedDomain = 'localhost'
         try {
             if (window.location.hostname !== allowedDomain) {
                 chrome.storage.sync.get(['user'], result => {
