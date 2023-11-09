@@ -29,7 +29,7 @@ If you don't have Git installed on your machine, you can follow the official ins
 First, clone the GitHub repository containing the Chrome extension to your local machine. Open your terminal and run the following command:
 
 ```bash
-git clone https://github.com/SolPal/chrome-extension.git
+git clone https://github.com/pollum-io/tutumon-extension.git
 ```
 
 ## Step 2: Navigate to the Extension Folder

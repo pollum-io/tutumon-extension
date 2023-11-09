@@ -1,5 +1,3 @@
-import WalletContextProvider from '@/context/WalletContextProvider'
-import { WalletMultiButton } from '@solana/wallet-adapter-react-ui'
 import React from 'react'
 
 const Options = () => {

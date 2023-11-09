@@ -47,7 +47,7 @@ export function PromptForm({ onSubmit, input, setInput, isLoading }: PromptProps
                     onChange={e => setInput(e.target.value)}
                     placeholder="How can I help you?"
                     spellCheck={false}
-                    className="relative flex min-h-[60px] max-h-60 grow w-full p-2 resize-none bg-transparent overflow-hidden focus-within:outline-none sm:rounded-xl sm:text-sm  sm:border  focus:border-[#271b38] items center justify-center text-gray-700"
+                    className="relative flex min-h-[60px] max-h-60 grow w-full p-2 resize-none bg-transparent overflow-hidden focus-within:outline-none sm:rounded-xl sm:text-sm  sm:border  focus:border-[#03445E] items center justify-center text-gray-700"
                 ></Textarea>
 
                 <Button

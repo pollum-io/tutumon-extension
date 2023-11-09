@@ -1,15 +1,15 @@
 // Create context menu item
 chrome.runtime.onInstalled.addListener(() => {
     chrome.contextMenus.create({
-        id: 'solpal',
-        title: 'SolPal',
+        id: 'tutu',
+        title: 'tutu',
         contexts: ['selection']
     })
 })
 
 // Listen for context menu clicks
 chrome.contextMenus.onClicked.addListener((info, tab) => {
-    if (info.menuItemId === 'solpal') {
+    if (info.menuItemId === 'tutu') {
         const selectedText = info.selectionText
         // Send message to content script
         chrome.tabs.sendMessage(tab.id, {
@@ -51,4 +51,4 @@ chrome.runtime.onMessage.addListener((request, sender, sendResponse) => {
     }
 })
 
-export {}
+export { }

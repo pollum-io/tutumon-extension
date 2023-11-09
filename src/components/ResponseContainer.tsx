@@ -36,7 +36,7 @@ export default function ResponseContainer({
         <div className="pl-2 flex gap-2 w-full items-center justify-start" ref={ref?.current}>
             <div className="flex gap-3 my-4 text-sm bg-slate-100 max-w-[80%] min-w-[20%] py-3 px-4 rounded-xl response">
                 <p className="leading-relaxed text-gray-500">
-                    <span className="block font-bold text-gray-700">SolPal </span>
+                    <span className="block font-bold text-gray-700">Tutu </span>
                     {forceSlowText ? slowText : response}
                 </p>
             </div>

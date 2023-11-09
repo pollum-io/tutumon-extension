@@ -67,7 +67,7 @@ export default function Chat({
     return (
         <>
             <Card className="fixed flex flex-col bottom-[8rem] right-0 mr-4 rounded-xl w-[440px]  shadow-md bg-white overflow-hidden z-[999] ">
-                <CardHeader className="bg-[#271b38] text-white">
+                <CardHeader className="bg-[#03445E] text-white">
                     <div className="absolute top-4 right-4  flex gap-x-3">
                         <button onClick={toggleIsOpen} className="font-medium p-1">
                             -
@@ -81,19 +81,18 @@ export default function Chat({
                             <img
                                 src={
                                     user?.image ||
-                                    'https://cdn.discordapp.com/attachments/1159197460158238730/1159948783166165102/solpal-logo.png?ex=6532e17c&is=65206c7c&hm=95e3831ff8a8e1cb955d239d1dc84da8868cfc4009bf1448af0c65a35b16d6ff&'
+                                    'https://media.discordapp.net/attachments/740663951389360239/1171932869250257026/tutumon-removebg.png?ex=655e7a89&is=654c0589&hm=09800e7bdfc906d5c591144175b72204cbd967ec60f23b5583d2b3bbd5df6de3&=&width=1000&height=1000'
                                 }
                                 alt="Logo"
                                 height={64}
                                 width={64}
-                                className={` ${
-                                    user?.imgConfig?.mirror
-                                        ? 'transform -scale-x-100'
-                                        : 'transform scale-x-100'
-                                }`}
+                                className={` ${user?.imgConfig?.mirror
+                                    ? 'transform -scale-x-100'
+                                    : 'transform scale-x-100'
+                                    }`}
                             />
                         </Avatar>
-                        SolPal.ai Chat
+                        Tutu Monster Chat
                     </CardTitle>
                     {/* <div className="flex flex-col space-y-1.5">
                 <h2 className="font-semibold text-lg tracking-tight"></h2>
@@ -147,9 +146,8 @@ export default function Chat({
                     <Button
                         variant="default"
                         size="icon"
-                        className={`absolute right-4 bottom-1 z-10  transition-opacity duration-300 sm:right-8 md:bottom-2 border border-slate-300 rounded-xl bg-slate-100 disabled:opacity-0 ${
-                            isAtBottom ? 'opacity-0' : 'opacity-100'
-                        }`}
+                        className={`absolute right-4 bottom-1 z-10  transition-opacity duration-300 sm:right-8 md:bottom-2 border border-slate-300 rounded-xl bg-slate-100 disabled:opacity-0 ${isAtBottom ? 'opacity-0' : 'opacity-100'
+                            }`}
                         onClick={scrollToBottom}
                         disabled={isAtBottom}
                     >
