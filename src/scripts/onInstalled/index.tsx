@@ -5,7 +5,7 @@ import '@/styles/index.css'
 const OnInstalled = () => {
     return (
         <div>
-            <h1>Thanks for Installing SolPal!</h1>
+            <h1>Thanks for Installing Tutu Monster!</h1>
         </div>
     )
 }

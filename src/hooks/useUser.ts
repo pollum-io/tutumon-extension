@@ -10,7 +10,7 @@ export const useUser = () => {
 
         // Set user in Chrome Storage
         try {
-            chrome.storage.sync.set({ user: userData }, () => {})
+            chrome.storage.sync.set({ user: userData }, () => { })
             setUser(userData)
         } catch (e) {
             console.error("Couldn't set user in Chrome Storage:", e)
@@ -19,7 +19,7 @@ export const useUser = () => {
 
     useEffect(() => {
         // Check if we are in the allowed domain
-        const allowedDomain = 'www.solpal.org'
+        const allowedDomain = 'tutu-monster.vercel.app/'
         try {
             if (window.location.hostname !== allowedDomain) {
                 chrome.storage.sync.get(['user'], result => {

@@ -40,14 +40,13 @@ const HighlightableText = ({
                             <img
                                 src={
                                     user?.image ||
-                                    'https://cdn.discordapp.com/attachments/1159197460158238730/1159948783166165102/solpal-logo.png?ex=6532e17c&is=65206c7c&hm=95e3831ff8a8e1cb955d239d1dc84da8868cfc4009bf1448af0c65a35b16d6ff&'
+                                    'https://media.discordapp.net/attachments/740663951389360239/1171932869250257026/tutumon-removebg.png?ex=655e7a89&is=654c0589&hm=09800e7bdfc906d5c591144175b72204cbd967ec60f23b5583d2b3bbd5df6de3&=&width=1000&height=1000'
                                 }
                                 alt="Logo"
-                                className={`w-16 h-16 object-contain ${
-                                    user?.imgConfig?.mirror
-                                        ? 'transform -scale-x-100'
-                                        : 'transform scale-x-100'
-                                }`}
+                                className={`w-16 h-16 object-contain ${user?.imgConfig?.mirror
+                                    ? 'transform -scale-x-100'
+                                    : 'transform scale-x-100'
+                                    }`}
                             />
                         </div>
                         <div className="relative h-4 ml-4 w-6">
@@ -81,14 +80,13 @@ const HighlightableText = ({
                                     <img
                                         src={
                                             user?.image ||
-                                            'https://cdn.discordapp.com/attachments/1159197460158238730/1159948783166165102/solpal-logo.png?ex=6532e17c&is=65206c7c&hm=95e3831ff8a8e1cb955d239d1dc84da8868cfc4009bf1448af0c65a35b16d6ff&'
+                                            'https://media.discordapp.net/attachments/740663951389360239/1171932869250257026/tutumon-removebg.png?ex=655e7a89&is=654c0589&hm=09800e7bdfc906d5c591144175b72204cbd967ec60f23b5583d2b3bbd5df6de3&=&width=1000&height=1000'
                                         }
                                         alt="Logo"
-                                        className={`w-16 h-16 object-contain ${
-                                            user?.imgConfig?.mirror
-                                                ? 'transform -scale-x-100'
-                                                : 'transform scale-x-100'
-                                        }`}
+                                        className={`w-16 h-16 object-contain ${user?.imgConfig?.mirror
+                                            ? 'transform -scale-x-100'
+                                            : 'transform scale-x-100'
+                                            }`}
                                     />
                                 </div>
                             </div>

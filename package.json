@@ -1,7 +1,7 @@
 {
-    "name": "solpal-chrome-extension",
-    "longName": "Solpal.ai",
-    "description": "Personal web companion for everything web3 and Solana related",
+    "name": "tutumon-extension",
+    "longName": "Tutu.monster",
+    "description": "Personal web companion for everything web3 and Near related",
     "version": "1.0.0",
     "main": "index.js",
     "scripts": {
@@ -73,9 +73,6 @@
         "@radix-ui/react-toast": "^1.1.5",
         "@radix-ui/react-toggle": "^1.0.3",
         "@radix-ui/react-tooltip": "^1.0.7",
-        "@solana/wallet-adapter-react": "^0.15.35",
-        "@solana/wallet-adapter-react-ui": "^0.9.34",
-        "@solana/wallet-adapter-wallets": "^0.19.22",
         "ai": "^2.2.14",
         "axios": "^1.5.1",
         "class-variance-authority": "^0.7.0",
