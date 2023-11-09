@@ -7,7 +7,7 @@ export const useUser = () => {
     const { session } = useSession()
 
     const fetchUser = async publickey => {
-        const res = await axios.get(`https://tutu-monster.vercel.app//api/user?publickey=${session.user.email}`)
+        const res = await axios.get(`https://tutu-monster.vercel.app/api/user?publickey=${session.user.email}`)
         const userData = await res.data
 
         // Set user in Chrome Storage
