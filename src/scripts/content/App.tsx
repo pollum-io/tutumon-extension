@@ -15,7 +15,7 @@ export type MessageProps = {
 
 const App = () => {
     const AiChat = useOpenAi()
-    // const { session } = useSession()
+    const { session } = useSession()
     const { user } = useUser()
     const [isOpen, setIsOpen] = useState(false)
     const [isActivated, setIsActivated] = useState(true)
@@ -25,6 +25,8 @@ const App = () => {
     const [tooltipContent, setTooltipContent] = useState('')
     const [tooltipPosition, setTooltipPosition] = useState({ top: 0, left: 0 })
     const [isHighlightedLoading, setIsHighlightedLoading] = useState(false)
+
+    console.log('sessionaaa: ', session?.picture)
 
     const toggleIsOpen = () => {
         setIsOpen(!isOpen)
@@ -121,14 +123,15 @@ const App = () => {
                             >
                                 <img
                                     src={
-                                        user?.image ||
+                                        session?.picture ||
                                         'https://media.discordapp.net/attachments/740663951389360239/1171932869250257026/tutumon-removebg.png?ex=655e7a89&is=654c0589&hm=09800e7bdfc906d5c591144175b72204cbd967ec60f23b5583d2b3bbd5df6de3&=&width=1000&height=1000'
                                     }
                                     alt="Logo"
-                                    className={`w-16 h-16 ${user?.imgConfig?.mirror
-                                        ? 'transform -scale-x-100'
-                                        : 'transform scale-x-100'
-                                        }`}
+                                    className={`w-16 h-16 ${
+                                        user?.imgConfig?.mirror
+                                            ? 'transform -scale-x-100'
+                                            : 'transform scale-x-100'
+                                    }`}
                                 />
                             </button>
                             {isOpen && (
