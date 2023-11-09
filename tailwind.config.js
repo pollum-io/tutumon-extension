@@ -23,6 +23,7 @@ module.exports = {
                 ring: 'hsl(262.1 83.3% 57.8%)',
                 background: 'hsl(0 0% 100%)',
                 foreground: 'hsl(224 71.4% 4.1%)',
+                tutupink: '#FF7DA1',
                 primary: {
                     DEFAULT: 'hsl(265,34%,41%)',
                     foreground: 'hsl(210 20% 98%)'

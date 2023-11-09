@@ -5,16 +5,16 @@ const Popup = () => {
     // const session = useSession()
 
     return (
-        <div className="inline-flex flex-col justify-between p-8 border shadow w-96 h-full bg-[#03445E] border-zinc-800 overflow-hidden">
+        <div className="inline-flex flex-col justify-between p-8 border shadow w-96 h-full bg-tutupink border-zinc-800 overflow-hidden">
             <div className="grid grid-cols-[2fr,1fr] items-center justify-center gap-4">
-                <div className="inline-flex flex-col items-start justify-between gap-1 h-full">
+                <div className="inline-flex flex-col items-start justify-between gap-4 p-4 h-full backdrop-blur-md bg-black/60 rounded-3xl">
                     <div>
                         <div className="text-lg font-bold leading-none text-neutral-50">
                             Tutu Monster
                         </div>
                         <div className="justify-start items-start inline-flex">
                             <div className="text-sm font-normal leading-tight text-zinc-400">
-                                Personal web companion for everything web3 and Near related
+                                Personal web companion for everything Near related
                             </div>
                         </div>
                     </div>

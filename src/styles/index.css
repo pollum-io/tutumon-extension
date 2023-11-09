@@ -38,8 +38,8 @@ h3 {
     width: 10px;
     height: 10px;
     border-radius: 5px;
-    background-color: #59E4BE;
-    color: #59E4BE;
+    background-color: #FF7DA1;
+    color: #FF7DA1;
     animation: dot-flashing 1s infinite linear alternate;
     animation-delay: 0.5s;
 }
@@ -57,8 +57,8 @@ h3 {
     width: 10px;
     height: 10px;
     border-radius: 5px;
-    background-color: #59E4BE;
-    color: #59E4BE;
+    background-color: #FF7DA1;
+    color: #FF7DA1;
     animation: dot-flashing 1s infinite alternate;
     animation-delay: 0s;
 }
@@ -68,20 +68,20 @@ h3 {
     width: 10px;
     height: 10px;
     border-radius: 5px;
-    background-color: #59E4BE;
-    color: #59E4BE;
+    background-color: #FF7DA1;
+    color: #FF7DA1;
     animation: dot-flashing 1s infinite alternate;
     animation-delay: 1s;
 }
 
 @keyframes dot-flashing {
     0% {
-        background-color: #59E4BE;
+        background-color: #000000;
     }
 
     50%,
     100% {
-        background-color: rgba(89, 228, 190, 0.5);
+        background-color: #FF7DA1;
     }
 }
 
@@ -146,7 +146,7 @@ h3 {
     bottom: 0;
     position: absolute;
     border: 0.75em solid transparent;
-    border-bottom-color: #f1f5f9;
+    border-bottom-color: #FF7DA1;
     display: block;
     left: -0.75em;
 }
@@ -160,7 +160,7 @@ h3 {
     bottom: 0;
     position: absolute;
     border: 0.75em solid transparent;
-    border-bottom-color: #008CA2;
+    border-bottom-color: #FF7DA1;
     display: block;
     right: -0.65em;
 }

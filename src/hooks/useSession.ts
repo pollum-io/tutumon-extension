@@ -36,7 +36,7 @@ export const useSession = () => {
 
     const fetchSession = async () => {
         try {
-            const res = await axios.get('https://www.solpal.org/api/auth/session')
+            const res = await axios.get('https://tutu-monster.vercel.app/api/auth/session')
             const fetchedSession = await res.data
             if (!fetchedSession) return
             chrome.storage.sync.set({ session: fetchedSession }, () => {

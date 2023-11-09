@@ -1,7 +1,7 @@
 {
     "name": "tutumon-extension",
     "longName": "Tutu.monster",
-    "description": "Personal web companion for everything web3 and Near related",
+    "description": "Personal web companion for everything Near related",
     "version": "1.0.0",
     "main": "index.js",
     "scripts": {
